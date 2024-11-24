@@ -16,12 +16,14 @@ const app = express();
 const url = process.env.CLIENT_URL;
 app.use(
   cors({
-    origin: "*",
-    url,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: process.env.CLIENT_URL,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
+
+app.options("*", cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
@@ -45,7 +47,7 @@ server.listen(port, (req, res) => {
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "*",
+    origin: process.env.CLIENT_URL,
     url,
   },
 });
