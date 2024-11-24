@@ -17,7 +17,7 @@ const url = process.env.CLIENT_URL;
 app.use(
   cors({
     origin: process.env.CLIENT_URL,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "HEAD", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
@@ -48,6 +48,7 @@ const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
     origin: process.env.CLIENT_URL,
+    credentials: true,
   },
 });
 io.on("connection", (socket) => {
