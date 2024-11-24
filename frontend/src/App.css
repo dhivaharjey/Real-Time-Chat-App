@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------- CHANGE THE SCROOL BAR DESIGN ---------------*/
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+  border-radius: 30px;
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  /* background: #e0e0e0; */
+  background-image: url("/blob-scene-haikei.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+}

@@ -1,0 +1,60 @@
+.dots-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  padding: 15px;
+  border-radius: 25px;
+  background: #dbdbdb;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #9c9c9c;
+  animation: pulse 1.2s infinite ease-in;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.6);
+    background-color: #9c9c9c;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+  25% {
+    transform: scale(0.9);
+    background-color: #9c9c9c;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #9c9c9c;
+  }
+  75% {
+    transform: scale(0.9);
+    background-color: #9c9c9c;
+  }
+
+  100% {
+    transform: scale(0.6);
+    background-color: #9c9c9c;
+  }
+}
