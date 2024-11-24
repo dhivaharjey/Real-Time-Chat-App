@@ -14,7 +14,14 @@ import messageRoutes from "./routes/messagesRoutes.js";
 dotenv.config();
 const app = express();
 const url = process.env.CLIENT_URL;
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    url,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(bodyParser.json());
 
@@ -39,6 +46,7 @@ const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
     origin: "*",
+    url,
   },
 });
 io.on("connection", (socket) => {
